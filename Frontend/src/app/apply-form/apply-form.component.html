@@ -1,0 +1,112 @@
+<div class="postjob" style="height: 900px; width: 100%;">
+    <div class="container-fluid">
+        <nav class=" mt-1 navbar navbar-expand-lg  navbar-dark danger-color rounded" style="height: 60px;">
+          <!-- Brand -->
+          
+          <!-- Links -->
+          
+        </nav>
+      </div>
+    <div class="container mt-5 ">
+        <div class="row">
+
+            <div class="mat-elevation-z4 col-6">
+                <br> <br>
+                <ul>
+                    <ul class="diamond" style="color: blanchedalmond;">
+                        <li>jobrole</li>
+                        <li>Experiance required</li>
+                        <li>lorem ipsum</li>
+                        <li>lorem ipsum</li>
+                        <li>lorem ipsum</li>
+                      </ul>
+                </ul>
+            </div>
+            <div class=" mat-elevation-z4 col-6">
+                <div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+                  <mat-card class="box">
+                    <mat-card-header>
+                      <mat-card-title>Apply</mat-card-title>
+                    </mat-card-header>
+                
+                    <form class="example-form" (ngSubmit)="applyJob()" [formGroup]="applyform">
+                
+                      
+                        <mat-form-field class="example-full-width">
+                          <input formControlName="fullname" matInput placeholder="Fullname" [(ngModel)]="applyjobdetails.fullname">
+                        
+                            <mat-error class="error-text" *ngIf="applyformControl.fullname.errors?.required" >name  is required</mat-error>
+                            <mat-error class="error-text" *ngIf="applyformControl.fullname.errors?.pattern" > Minimun 5 charaters ,No spaces are allowed
+                            </mat-error>
+                           
+                          
+                        </mat-form-field>
+                
+                        <mat-form-field class="example-full-width">
+                          <input formControlName="email" matInput placeholder="Email" [(ngModel)]="applyjobdetails.email">
+                         
+                            <mat-error class="error-text" *ngIf="applyformControl.email.errors?.required" >Email is required</mat-error>
+                            <mat-error class="error-text" *ngIf="applyformControl.email.errors?.pattern" > Email format Error
+                            </mat-error>
+                        
+                        </mat-form-field>
+                        
+                        <mat-form-field class="example-full-width">
+                          <input  formControlName="phoneno" type="tel" minlength="10"  matInput placeholder="Phone Number" [(ngModel)]="applyjobdetails.phoneno">
+                        
+                            <mat-error class="error-text" *ngIf="applyformControl.phoneno.errors?.required" >Phone No. is required</mat-error>
+                            <mat-error class="error-text" *ngIf="applyformControl.phoneno.errors?.pattern" >Format Error </mat-error>
+                           
+                         
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                          <input formControlName="hq" matInput placeholder="Highest qualification"  [(ngModel)]="applyjobdetails.hq">
+                          
+                            <mat-error class="error-text" *ngIf="applyformControl.hq.errors?.required" >Qualification is required</mat-error>
+                           
+                        
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                          <input formControlName="skill" matInput placeholder=" Skills like Node.js,Angular......"  [(ngModel)]="applyjobdetails.skill">
+                          
+                            <mat-error class="error-text" *ngIf="applyformControl.skill.errors?.required"  >Skills field is empty</mat-error>
+                           
+                        
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                          <input formControlName="experience" matInput placeholder="Years of Experience"  [(ngModel)]="applyjobdetails.experience">
+                          
+                            <mat-error class="error-text" *ngIf="applyformControl.experience.errors?.required" >Years of Experience is required</mat-error>
+                           
+                        
+                        </mat-form-field>
+                       
+                        
+                        <mat-form-field class="example-full-width">
+                          <input type="college" formControlName="college" matInput placeholder="College" [(ngModel)]="applyjobdetails.college">
+                        
+                            <mat-error class="error-text" *ngIf="applyformControl.college.errors?.required"  >College is required</mat-error>
+                        </mat-form-field>
+                
+                     
+                      
+                
+                      <button [disabled]=applyform.invalid  mat-stroked-button color="accent" type="submit" class="btn-block" >Apply</button>
+                
+                    </form>
+                  </mat-card>
+                </div>
+              </div>
+
+
+        </div>
+    </div>
+    
+    
+</div>
+
+
+
+
+
+

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EmployerdataService } from '../services/employerdata.service';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-employer',
@@ -23,13 +26,16 @@ export class EmployerComponent implements OnInit {
   errmsg:any
 
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private employerdataservice:EmployerdataService) { }
 
   ngOnInit(): void {
   }
   addEmployee(){
     if(this.emp.conpassword==this.emp.password){
-      alert("Profile is created");
+      this.employerdataservice.postEmployerdata(this.emp);
+      Swal.fire("Profile Created")
+          .then(()=>{
+      this.router.navigate(["employerHome"])})
     }else{
       this.errmsg="Passwword doesn't match"
     }

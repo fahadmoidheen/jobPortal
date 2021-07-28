@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema =mongoose.Schema
 
-const BookSchema =new Schema({
+const jobPostSchema =new Schema({
     jobrole:String,
     experiance:String,
     skills:String,
@@ -10,5 +10,5 @@ const BookSchema =new Schema({
     lastdate:String,
     jobtype:String
 });
-var Bookdata =mongoose.model('jobPost',BookSchema);
-module.exports=Bookdata;
+var jobPost =mongoose.model('jobPost',jobPostSchema);
+module.exports=jobPost;

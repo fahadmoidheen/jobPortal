@@ -21,6 +21,11 @@ import { FooterComponent } from './footer/footer.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { EmployerHomeComponent } from './employer-home/employer-home.component';
 import { EmployerLoginComponent } from './employer-login/employer-login.component';
+import { JobPostService } from './services/job-post.service';
+import { AdminService } from './services/admin.service';
+import { ApplyFormComponent } from './apply-form/apply-form.component';
+import { EmployerdataService } from './services/employerdata.service';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +41,8 @@ import { EmployerLoginComponent } from './employer-login/employer-login.componen
     FooterComponent,
     AdminHomeComponent,
     EmployerHomeComponent,
-    EmployerLoginComponent
+    EmployerLoginComponent,
+    ApplyFormComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +54,7 @@ import { EmployerLoginComponent } from './employer-login/employer-login.componen
     AngularMaterialModule
 
   ],
-  providers: [],
+  providers: [JobPostService,AdminService,EmployerdataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

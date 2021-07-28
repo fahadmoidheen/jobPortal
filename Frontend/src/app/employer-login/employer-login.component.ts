@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder,Validators } from '@angular/forms';
+import { FormBuilder,FormControl,FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from '../services/admin.service';
+import { EmployerdataService } from '../services/employerdata.service';
+
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-employer-login',
@@ -13,14 +17,31 @@ export class EmployerLoginComponent implements OnInit {
     email:"",
     password:""
   }
-  constructor(private router:Router) { }
-    
-    
 
+  
+  constructor(private router:Router,private employerservice:EmployerdataService) { }
+    
   ngOnInit(): void { }
+
+
   loginEmp(){
-    alert("Succesfully logged in")
-    this.router.navigate(["/employerHome"])
+    this.employerservice.loginEmployer(this.emp)
+    .subscribe(
+      res=>{
+        console.log(res)
+        Swal.fire("Succesfully logged in")
+          .then(()=>{
+      this.router.navigate(["employerHome"])})
+      },
+      err=>{
+        console.log(err)
+        if(err.status===409){
+          alert ("Incorrect credentials")
+        }else{
+          alert ("something went wrong")
+        }
+      }
+      )
   }
 }    
 

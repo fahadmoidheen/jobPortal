@@ -11,10 +11,5 @@ const JobSchema = new Schema ({
     
 });
 
-
-
 var Jobdata = mongoose.model('jobdata', JobSchema);
-
-
-
 module.exports = Jobdata;

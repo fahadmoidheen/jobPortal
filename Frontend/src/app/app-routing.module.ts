@@ -12,6 +12,7 @@ import { FacultyComponent } from './faculty/faculty.component';
 import { IndexComponent } from './index/index.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { JobpostComponent } from './jobpost/jobpost.component';
+import { ApplyFormComponent } from './apply-form/apply-form.component';
 
 const routes: Routes = [
   {path:"",component:IndexComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:"admin/home",component:AdminHomeComponent},
   {path:"employer-login",component:EmployerLoginComponent},
   {path:"employerHome",component:EmployerHomeComponent},
-  {path:"jobpost",component:JobpostComponent}
+  {path:"jobpost",component:JobpostComponent},
+  {path:"applyform",component:ApplyFormComponent}
 ];
 
 @NgModule({

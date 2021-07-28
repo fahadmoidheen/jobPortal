@@ -3,7 +3,7 @@
     <mat-tab-group mat-align-tabs="center">
         <mat-tab label="Post Jobs"> 
             
-            <div class="example-large-box mat-elevation-z4">
+            <div class="">
                 <!-- <a href="jobpost" style="text-decoration: none; color: black;">Post Job</a> -->
                 <app-jobpost></app-jobpost>
                 
@@ -28,14 +28,14 @@
                         <th>Job Type</th>
                         <th></th>
                       </tr>
-                      <tr>
-                        <td>software engg</td>
-                        <td>2 years</td>
-                        <td>html css</td>
-                        <td>Btech</td>
-                        <td>dfzdfz</td>
-                        <td>12/3/2010</td>
-                        <td>internship</td>
+                      <tr *ngFor="let job of jobs">
+                        <td>{{job.jobrole}}</td>
+                        <td>{{job.experiance}}</td>
+                        <td>{{job.skills}}</td>
+                        <td>{{job.education}}</td>
+                        <td>{{job.jobdesc}}</td>
+                        <td>{{job.lastdate}}</td>
+                        <td>{{job.jobtype}}</td>
                       </tr>
                       <tr>
                         
